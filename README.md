@@ -1,24 +1,62 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Rails/React - Games Rental Store
 
-Things you may want to cover:
+> This is an online rental store where users can add games to the app or rent games
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby on Rails
+- React
+- Redux
+- VScode
+- Git & GitHub
+- Rswagger
 
-* Configuration
+## Getting Started
 
-* Database creation
+To get a local copy up and running follow these simple example steps.
 
-* Database initialization
+- Go to a repository on your local machine where you want to clone this repo
+- run `git clone https://github.com/miguelesco/games-rental-rails.git`
+- Open the repo
+- Run these commands in order
+   - `bundle install`
+   - `rails db:create` (maybe you will need to change the database.yml file)
+   - `rails db:migrate`
+   - `rails s`
+- Choose another directory for the React part of the APP
+- Go to this [repository](https://github.com/miguelesco/game-rentals-react)
+- run `git clone https://github.com/miguelesco/game-rentals-react.git`
+- Open the repo
+- Run `npm start` or `yarn start`
+- Open the local server on your browser.
 
-* How to run the test suite
+## Authors
 
-* Services (job queues, cache servers, search engines, etc.)
+👤 **ArthurGC**
 
-* Deployment instructions
+- GitHub: [@ArthurGC](https://github.com/ArthurGC)
+- Twitter: [@ArthurGC_22](https://twitter.com/ArthurGC_22)
+- LinkedIn: [alxguzmanc](https://www.linkedin.com/in/alxguzmanc/)
 
-* ...
+👤 **Miguelangel E.**
+
+- GitHub: [@miguelesco](https://github.com/miguelesco)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/miguelangel-escorche-delgado-9a2956163/)
+
+👤 **João Vítor Montanholi Nunes**
+
+- GitHub: [jmontanholi](https://github.com/jmontanholi)
+- Twitter: [MontanholiNunes](https://twitter.com/MontanholiNunes)
+- LinkedIn: [Joao vitor montanholi](https://www.linkedin.com/in/joaovitormontanholi/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
