@@ -20,12 +20,12 @@ class Api::UsersController < ApplicationController
       @games = @user.games
       @reservations = @user.reservations
       render json: {
-        user: @user,
+        id: @user.id,
+        username: @user.username,
         games: @games,
         reservations: @reservations
       }
     else
-      p params[:username]
       render json: {
         error: 'No user was found with that name'
       }
