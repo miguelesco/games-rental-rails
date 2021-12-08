@@ -1,5 +1,5 @@
 class Api::GamesController < ApplicationController
-  before_action :capitalize_params
+  before_action :capitalize_params, only: [:create]
 
   def create
     @game = Game.new(game_params)
@@ -15,28 +15,42 @@ class Api::GamesController < ApplicationController
   end
 
   def retrieve
-    @game = User.find_by(params[:id])
-    if @game
+    @games = Game.all
+    if @games
       render json: {
-        user: @user,
-        games: @games,
-        reservations: @reservations
+        games: @games
       }
     else
-      p params[:username]
       render json: {
-        error: 'No user was found with that name'
+        error: 'No games were found with that name'
       }
     end
   end
 
+  def delete
+    @game = Game.find(params[:id])
+    @game.delete
+
+    render json: {
+      message: 'Successfully deleted'
+    }
+  end
+
   private
 
-  def user_params
-    params.permit(:username)
+  def game_params
+    params.permit(
+      :name,
+      :category,
+      :price,
+      :icon,
+      :description,
+      :owner_id
+    )
   end
 
   def capitalize_params
-    params[:username].capitalize!
+    params[:name].capitalize!
+    params[:category].capitalize!
   end
 end
