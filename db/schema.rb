@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_12_08_203832) do
 
   create_table "reservations", force: :cascade do |t|
     t.date "reservation_date"
-    t.date "retriaval_date"
+    t.date "retrieval_date"
     t.string "location"
     t.bigint "buyer_id", null: false
     t.bigint "game_id", null: false

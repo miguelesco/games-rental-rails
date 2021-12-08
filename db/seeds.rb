@@ -43,7 +43,7 @@ Game.create(games)
 
 reservation = {
   reservation_date: '2020-01-01',
-  retriaval_date: '2020-01-03',
+  retrieval_date: '2020-01-03',
   location: 'São Paulo',
   buyer_id: 2,
   game_id: 1,
