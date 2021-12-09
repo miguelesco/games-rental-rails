@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     post 'sign_up', to: 'users#create'
-    get 'sign_in', to: 'users#login'
+    post 'sign_in', to: 'users#login'
 
     post 'add_game', to: 'games#create'
     get 'games', to: 'games#retrieve'

@@ -42,7 +42,7 @@ RSpec.describe 'api/users', type: :request do
 
   path '/api/sign_in' do
 
-    get 'User login' do
+    post 'User login' do
       tags 'User'
       consumes 'application/json'
       produces 'application/json'
@@ -56,10 +56,7 @@ RSpec.describe 'api/users', type: :request do
 
       response '200', 'User Logged In' do
         let(:username) { { username: 'Joao' } }
-        run_test! do |response|
-          data = JSON.parse(response.body)
-          expect(data['error']).to eq(' that name')
-        end
+        run_test!
       end
 
       response '422', 'No user found' do
