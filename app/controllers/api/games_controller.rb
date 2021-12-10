@@ -7,12 +7,12 @@ class Api::GamesController < ApplicationController
       render json: {
         game: @game
       },
-      status: 200
+             status: 200
     else
       render json: {
         error: @game.errors.full_messages
       },
-      status: 422
+             status: 422
     end
   end
 
@@ -22,12 +22,12 @@ class Api::GamesController < ApplicationController
       render json: {
         games: @games
       },
-      status: 200
+             status: 200
     else
       render json: {
         error: 'No games were found with that name'
       },
-      status: 422
+             status: 422
     end
   end
 
@@ -38,7 +38,7 @@ class Api::GamesController < ApplicationController
     render json: {
       message: 'Successfully deleted'
     },
-    status: 200
+           status: 200
   end
 
   private
@@ -55,11 +55,7 @@ class Api::GamesController < ApplicationController
   end
 
   def capitalize_params
-    if params[:name]
-      params[:name].capitalize!
-    end
-    if params[:category]
-      params[:category].capitalize!
-    end
+    params[:name]&.capitalize!
+    params[:category]&.capitalize!
   end
 end

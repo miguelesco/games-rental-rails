@@ -14,7 +14,7 @@ RSpec.describe 'api/users', type: :request do
         properties: {
           username: { type: :string }
         },
-        required: [ 'username' ]
+        required: ['username']
       }
 
       response '200', 'User created' do
@@ -41,7 +41,6 @@ RSpec.describe 'api/users', type: :request do
   end
 
   path '/api/sign_in' do
-
     post 'User login' do
       tags 'User'
       consumes 'application/json'
@@ -51,7 +50,7 @@ RSpec.describe 'api/users', type: :request do
         properties: {
           username: { type: :string }
         },
-        required: [ 'username' ]
+        required: ['username']
       }
 
       response '200', 'User Logged In' do

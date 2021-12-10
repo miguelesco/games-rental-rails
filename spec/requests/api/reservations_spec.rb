@@ -18,7 +18,7 @@ RSpec.describe 'Reservation', type: :request do
       game_id: @game.id,
       reservation_date: '2020-01-01',
       retrieval_date: '2020-01-02',
-      location: 'Somewhere',
+      location: 'Somewhere'
     )
   end
 
@@ -40,7 +40,10 @@ RSpec.describe 'Reservation', type: :request do
       }
 
       response '200', 'reservation created' do
-        let(:reservation) { {retrieval_date: '2021-12-12', reservation_date: '2021-12-8', location: 'Venezuela', game_id: @game.id, buyer_id: @user.id } }
+        let(:reservation) do
+          { retrieval_date: '2021-12-12', reservation_date: '2021-12-8', location: 'Venezuela', game_id: @game.id,
+            buyer_id: @user.id }
+        end
         run_test!
       end
 
@@ -51,7 +54,7 @@ RSpec.describe 'Reservation', type: :request do
     end
   end
 
-  path "/api/reservation/1/update" do
+  path '/api/reservation/1/update' do
     put 'Updates a reservation' do
       tags 'Reservations'
       consumes 'application/json'
@@ -69,7 +72,7 @@ RSpec.describe 'Reservation', type: :request do
       }
 
       response '200', 'reservation updated' do
-        let(:reservation) { {retrieval_date: '2021-12-15', reservation_date: '2021-12-2' } }
+        let(:reservation) { { retrieval_date: '2021-12-15', reservation_date: '2021-12-2' } }
         run_test! do |response|
           data = JSON.parse(response.body)
           expect(data['message']).to eq('Successfully Updated')
@@ -83,7 +86,7 @@ RSpec.describe 'Reservation', type: :request do
     end
   end
 
-  path "/api/reservation/1/delete" do
+  path '/api/reservation/1/delete' do
     delete 'Deletes a reservation' do
       tags 'Reservations'
       consumes 'application/json'
@@ -97,5 +100,4 @@ RSpec.describe 'Reservation', type: :request do
       end
     end
   end
-
 end

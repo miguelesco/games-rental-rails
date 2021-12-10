@@ -39,8 +39,6 @@ class Api::UsersController < ApplicationController
   end
 
   def capitalize_params
-    if params[:username]
-      params[:username].capitalize!
-    end
+    params[:username]&.capitalize!
   end
 end

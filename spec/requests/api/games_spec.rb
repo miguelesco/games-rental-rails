@@ -28,20 +28,20 @@ RSpec.describe 'Games', type: :request do
           category: { type: :string },
           owner_id: { type: :integer }
         },
-        required: [ 'name', 'description', 'icon', 'price', 'category', 'owner' ]
+        required: %w[name description icon price category owner]
       }
 
       response '200', 'game created' do
-        let(:game) { 
-          { 
-            name: 'Super Mario Bros', 
-            description: 'A classic game', 
-            icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Super_Mario_Bros.jpg/220px-Super_Mario_Bros.jpg', 
-            price: 10, 
-            category: 'Action', 
-            owner_id: @user.id 
-          } 
-        }
+        let(:game) do
+          {
+            name: 'Super Mario Bros',
+            description: 'A classic game',
+            icon: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7f/Super_Mario_Bros.jpg/220px-Super_Mario_Bros.jpg',
+            price: 10,
+            category: 'Action',
+            owner_id: @user.id
+          }
+        end
         run_test! do |response|
           data = JSON.parse(response.body)
           expect(data['error']).to eq(nil)
@@ -52,7 +52,9 @@ RSpec.describe 'Games', type: :request do
         let(:game) { { name: 'Super Mario Bros' } }
         run_test! do |response|
           data = JSON.parse(response.body)
-          expect(data['error']).to eq(["Owner must exist", "Description can't be blank", "Owner can't be blank", "Price can't be blank", "Price is not a number", "Category can't be blank", "Icon can't be blank"])
+          expect(data['error']).to eq(['Owner must exist', "Description can't be blank", "Owner can't be blank",
+                                       "Price can't be blank", 'Price is not a number', "Category can't be blank",
+                                       "Icon can't be blank"])
         end
       end
     end
@@ -87,6 +89,4 @@ RSpec.describe 'Games', type: :request do
       end
     end
   end
-
 end
-
