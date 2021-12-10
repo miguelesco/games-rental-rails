@@ -3,9 +3,9 @@ Rails.application.routes.draw do
     post 'sign_up', to: 'users#create'
     post 'sign_in', to: 'users#login'
 
-    post 'add_game', to: 'games#create'
+    post 'games/new', to: 'games#create'
     get 'games', to: 'games#retrieve'
-    delete 'game_delete', to: 'games#delete'
+    delete 'games/:id/delete', to: 'games#delete'
 
     post 'create_reservation', to: 'reservations#create'
     put 'update_reservation', to: 'reservations#update'

@@ -46,6 +46,8 @@ class Api::ReservationsController < ApplicationController
   end
 
   def capitalize_params
-    params[:location].capitalize!
+    if params[:location]
+      params[:location].capitalize!
+    end 
   end
 end
