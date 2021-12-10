@@ -7,9 +7,9 @@ Rails.application.routes.draw do
     get 'games', to: 'games#retrieve'
     delete 'games/:id/delete', to: 'games#delete'
 
-    post 'create_reservation', to: 'reservations#create'
-    put 'update_reservation', to: 'reservations#update'
-    delete 'delete_reservation', to: 'reservations#delete'
+    post 'reservation/new', to: 'reservations#create'
+    put 'reservation/:id/update', to: 'reservations#update'
+    delete 'reservation/:id/delete', to: 'reservations#delete'
   end
 
   mount Rswag::Ui::Engine => '/api-docs'

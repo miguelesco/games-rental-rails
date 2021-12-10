@@ -6,11 +6,13 @@ class Api::ReservationsController < ApplicationController
     if @reservation.save
       render json: {
         reservation: @reservation
-      }
+      },
+      status: 200
     else
       render json: {
         error: @reservation.errors.full_messages
-      }
+      },
+      status: 422
     end
   end
 
@@ -19,18 +21,41 @@ class Api::ReservationsController < ApplicationController
     @reservation.delete
 
     render json: {
-      message: 'Successfully deleted'
-    }
+      message: 'Successfully Deleted'
+    },
+    status: 200
   end
 
   def update
     @reservation = Reservation.find(params[:id])
-    @reservation.update(reservation_date: params[:reservation_date], retrieval_date: params[:retrieval_date])
-
-    render json: {
-      message: 'Successfully Updated',
-      reservation: @reservation
-    }
+    
+    if params[:reservation_date] && params[:retrieval_date]
+      @reservation.update(reservation_date: params[:reservation_date], retrieval_date: params[:retrieval_date])
+      render json: {
+        message: 'Successfully Updated',
+        reservation: @reservation
+      },
+      status: 200
+    elsif params[:reservation_date]
+      @reservation.update(reservation_date: params[:reservation_date])
+      render json: {
+        message: 'Reservation date Successfully Updated',
+        reservation: @reservation
+      },
+      status: 200
+    elsif params[:retrieval_date]
+      @reservation.update(retrieval_date: params[:retrieval_date])
+      render json: {
+        message: 'Retrieval date Successfully Updated',
+        reservation: @reservation
+      },
+      status: 200
+    else
+      render json: {
+        error: 'Please provide a reservation date'
+      },
+      status: 422
+    end
   end
 
   private
