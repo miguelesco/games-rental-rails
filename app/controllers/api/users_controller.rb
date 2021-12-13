@@ -6,11 +6,11 @@ class Api::UsersController < ApplicationController
     if @user.save
       render json: {
         user: @user
-      }
+      }, status: 200
     else
       render json: {
         error: @user.errors.full_messages
-      }
+      }, status: 422
     end
   end
 
@@ -24,11 +24,11 @@ class Api::UsersController < ApplicationController
         username: @user.username,
         games: @games,
         reservations: @reservations
-      }
+      }, status: 200
     else
       render json: {
         error: 'No user was found with that name'
-      }
+      }, status: 422
     end
   end
 
@@ -39,6 +39,6 @@ class Api::UsersController < ApplicationController
   end
 
   def capitalize_params
-    params[:username].capitalize!
+    params[:username]&.capitalize!
   end
 end
