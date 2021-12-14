@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'users#api_docs'
   namespace :api, defaults: { format: 'json' } do
     post 'sign_up', to: 'users#create'
     post 'sign_in', to: 'users#login'
@@ -15,5 +14,6 @@ Rails.application.routes.draw do
 
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
+  root 'users#api_docs'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
