@@ -37,6 +37,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def api_docs
+    redirect_to '/api-docs'
+  end
+
   private
 
   def user_params
