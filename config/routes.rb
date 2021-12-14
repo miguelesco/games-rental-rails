@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'users#create'
   namespace :api, defaults: { format: 'json' } do
     post 'sign_up', to: 'users#create'
     post 'sign_in', to: 'users#login'
