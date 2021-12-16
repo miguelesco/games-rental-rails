@@ -47,6 +47,7 @@ games = [
     description: 'Fall Guys is a massively multiplayer 
     party game with up to 60 players online in a free-for-all 
     struggle through round after round of escalating chaos until one victor remains!',
+    icon: 'something.png',
     owner_id: 3,
   },
   {
@@ -57,6 +58,7 @@ games = [
     the 8th major installment in the Resident Evil franchise - Resident 
     Evil Village. With detailed graphics, intense first-person action and 
     masterful storytelling, the terror has never felt more realistic.',
+    icon: 'something.png',
     owner_id: 1,
   },
   {
@@ -67,6 +69,7 @@ games = [
     world overrun by flesh-hungry zombies. Roam a city 
     devastated by a mysterious virus epidemic. Scavenge for supplies, 
     craft weapons, and face hordes of the infected.',
+    icon: 'something.png',
     owner_id: 2,
   },
 ]
