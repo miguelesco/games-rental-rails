@@ -30,4 +30,8 @@ FileUtils.chdir APP_ROOT do
 
   puts "\n== Restarting application server =="
   system! 'bin/rails restart'
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> 9e34008bca8b602d22488f74920724ecae46d240
