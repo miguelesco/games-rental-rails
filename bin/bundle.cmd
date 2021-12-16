@@ -114,8 +114,4 @@ m.load_bundler!
 
 if m.invoked_as_script?
   load Gem.bin_path("bundler", "bundle")
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> 9e34008bca8b602d22488f74920724ecae46d240
