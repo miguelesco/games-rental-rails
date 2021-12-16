@@ -111,5 +111,5 @@ reservations = [
   },
 ]
 
-Reservation.create(reservation)
+Reservation.create(reservations)
 
