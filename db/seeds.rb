@@ -78,11 +78,11 @@ Game.create(games)
 
 reservations = [
   {
-  reservation_date: '2020-01-01',
-  retrieval_date: '2020-01-03',
-  location: 'São Paulo',
-  buyer_id: 2,
-  game_id: 1,
+    reservation_date: '2020-01-01',
+    retrieval_date: '2020-01-03',
+    location: 'São Paulo',
+    buyer_id: 2,
+    game_id: 1,
   },
   {
     reservation_date: '2020-01-01',
