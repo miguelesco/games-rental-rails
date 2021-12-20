@@ -48,17 +48,18 @@ RSpec.describe 'Reservation', type: :request do
       end
 
       response '422', 'invalid request' do
-        let(:reservation) { { game_id: @game.id } }
+        let(:reservation) { { game_id: nil } }
         run_test!
       end
     end
   end
 
-  path '/api/reservation/1/update' do
+  path '/api/reservation/{id}/update' do
     put 'Updates a reservation' do
       tags 'Reservations'
       consumes 'application/json'
       produces 'application/json'
+      parameter name: :id, in: :path, type: :string
       parameter name: :reservation, in: :body, schema: {
         type: :object,
         properties: {
@@ -72,6 +73,7 @@ RSpec.describe 'Reservation', type: :request do
       }
 
       response '200', 'reservation updated' do
+        let(:id) { @reservation.id }
         let(:reservation) { { retrieval_date: '2021-12-15', reservation_date: '2021-12-2' } }
         run_test! do |response|
           data = JSON.parse(response.body)
@@ -80,19 +82,22 @@ RSpec.describe 'Reservation', type: :request do
       end
 
       response '422', 'invalid request' do
-        let(:reservation) { { game_id: @game.id } }
+        let(:id) { @reservation.id }
+        let(:reservation) { {} }
         run_test!
       end
     end
   end
 
-  path '/api/reservation/1/delete' do
+  path '/api/reservation/{id}/delete' do
     delete 'Deletes a reservation' do
       tags 'Reservations'
       consumes 'application/json'
       produces 'application/json'
+      parameter name: :id, in: :path, type: :string
 
       response '200', 'reservation deleted' do
+        let(:id) { @reservation.id }
         run_test! do |response|
           data = JSON.parse(response.body)
           expect(data['message']).to eq('Successfully Deleted')

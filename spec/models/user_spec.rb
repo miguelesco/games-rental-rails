@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before(:each) do
     @user1 = User.create(username: 'José')
-    @user2 = User.create(username: 'Joao')
+    @user2 = User.create(username: 'José')
   end
 
   context 'Create a user' do

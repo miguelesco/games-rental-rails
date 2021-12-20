@@ -34,7 +34,7 @@ class Api::GamesController < ApplicationController
   def delete
     @game = Game.find(params[:id])
     @reservations = @game.reservations
-    @reservations.each { |e| e.delete }
+    @reservations.each(&:delete)
     @game.delete
 
     render json: {
