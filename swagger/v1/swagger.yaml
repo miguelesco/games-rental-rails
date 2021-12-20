@@ -182,4 +182,4 @@ servers:
 - url: http://{defaultHost}
   variables:
     defaultHost:
-      default: localhost:3000
+      default: https://ancient-hollows-68035.herokuapp.com

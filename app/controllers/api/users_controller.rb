@@ -4,8 +4,13 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      @games = @user.games
+      @reservations = @user.reservations
       render json: {
-        user: @user
+        id: @user.id,
+        username: @user.username,
+        games: @games,
+        reservations: @reservations
       }, status: 200
     else
       render json: {
@@ -30,6 +35,10 @@ class Api::UsersController < ApplicationController
         error: 'No user was found with that name'
       }, status: 422
     end
+  end
+
+  def api_docs
+    redirect_to '/api-docs'
   end
 
   private
