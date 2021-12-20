@@ -8,7 +8,7 @@ RSpec.describe Game, type: :model do
       description: 'Test game description',
       icon: 'http//test.com/image25123',
       price: 145,
-      category: 'Horror',
+      category: 'Horror'
     )
   end
 
