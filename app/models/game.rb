@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
   belongs_to :owner, class_name: 'User'
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :description, presence: true, length: { maximum: 500 }
