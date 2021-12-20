@@ -8,13 +8,13 @@
 
 users = [
   {
-    username: 'Joao',
+    username: 'Montanholi',
   },
   {
-    username: 'Maria',
+    username: 'Arturo',
   },
   {
-    username: 'Pedro',
+    username: 'Escorche',
   },
 ]
 
@@ -22,7 +22,7 @@ User.create(users)
 
 games = [
   {
-    name: 'Super Mario Bros',
+    name: 'Super Mario Bros 2',
     category: 'Platformer',
     price: 20,
     description: 'Super Mario Bros is a platform video game series created by Nintendo EAD and published by Nintendo for the Nintendo Entertainment System (NES) console.',
@@ -30,7 +30,7 @@ games = [
     owner_id: 1,
   },
   {
-    name: 'Sekiro',
+    name: 'Sekiro 2',
     category: 'Souls-Like',
     price: 59,
     description: 'Game of the Year - The Game Awards 2019 Best Action Game of 2019 - 
@@ -41,7 +41,7 @@ games = [
     owner_id: 3,
   },
   {
-    name: 'Fall Guys',
+    name: 'Fall Guys 2',
     category: 'Party game',
     price: 38,
     description: 'Fall Guys is a massively multiplayer 
@@ -51,7 +51,7 @@ games = [
     owner_id: 3,
   },
   {
-    name: 'Resident Evil Village',
+    name: 'Resident Evil Village 2',
     category: 'Party game',
     price: 99,
     description: 'Experience survival horror like never before in 
@@ -62,7 +62,7 @@ games = [
     owner_id: 1,
   },
   {
-    name: 'Dying Light',
+    name: 'Dying Light 2',
     category: 'Zombies',
     price: 55,
     description: 'First-person action survival game set in a post-apocalyptic open 
@@ -78,35 +78,35 @@ Game.create(games)
 
 reservations = [
   {
-    reservation_date: '2020-01-01',
+    reservation_date: '2020-01-02',
     retrieval_date: '2020-01-03',
     location: 'São Paulo',
     buyer_id: 2,
     game_id: 1,
   },
   {
-    reservation_date: '2020-01-01',
+    reservation_date: '2020-01-02',
     retrieval_date: '2020-01-03',
     location: 'Berlim',
     buyer_id: 3,
     game_id: 5,
   },
   {
-    reservation_date: '2020-01-01',
+    reservation_date: '2020-01-02',
     retrieval_date: '2020-01-03',
     location: 'Ciudad del lest',
     buyer_id: 1,
     game_id: 2,
   },
   {
-    reservation_date: '2020-01-01',
+    reservation_date: '2020-01-02',
     retrieval_date: '2020-01-03',
     location: 'Mexico',
     buyer_id: 1,
     game_id: 3,
   },
   {
-    reservation_date: '2020-01-01',
+    reservation_date: '2020-01-02',
     retrieval_date: '2020-01-03',
     location: 'London',
     buyer_id: 2,
