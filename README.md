@@ -36,7 +36,7 @@ To get a local copy up and running follow these simple example steps.
 [Kanban Board Link](https://github.com/miguelesco/games-rental-rails/projects/1)
 ![Kanban Board](https://user-images.githubusercontent.com/73256642/145242439-5ebdf98d-67e0-48d5-8817-03a8a5f406e3.png)
 Number of students: 3
-
+[Main Branch](https://github.com/miguelesco/games-rental-rails/tree/main)
 ## Authors
 
 👤 **ArthurGC**
