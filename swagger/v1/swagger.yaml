@@ -1,0 +1,185 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/games/new":
+    post:
+      summary: Creates a new game
+      tags:
+      - Games
+      parameters: []
+      responses:
+        '200':
+          description: game created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                icon:
+                  type: string
+                price:
+                  type: integer
+                category:
+                  type: string
+                owner_id:
+                  type: integer
+              required:
+              - name
+              - description
+              - icon
+              - price
+              - category
+              - owner
+  "/api/games":
+    get:
+      summary: Retrieves all games
+      tags:
+      - Games
+      responses:
+        '200':
+          description: games retrieved
+  "/api/games/{id}/delete":
+    delete:
+      summary: Deletes a game
+      tags:
+      - Games
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: game deleted
+  "/api/reservation/new":
+    post:
+      summary: Creates a new reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '200':
+          description: reservation created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                retrieval_date:
+                  type: string
+                reservation_date:
+                  type: string
+                location:
+                  type: string
+                game_id:
+                  type: integer
+                buyer_id:
+                  type: integer
+              required:
+              - game_id
+              - buyer_id
+              - retrieval_date
+              - reservation_date
+              - location
+  "/api/reservation/1/update":
+    put:
+      summary: Updates a reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '200':
+          description: reservation updated
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                retrieval_date:
+                  type: string
+                reservation_date:
+                  type: string
+                location:
+                  type: string
+                game_id:
+                  type: integer
+                buyer_id:
+                  type: integer
+              required:
+              - game_id
+              - buyer_id
+              - retrieval_date
+              - reservation_date
+              - location
+  "/api/reservation/1/delete":
+    delete:
+      summary: Deletes a reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: reservation deleted
+  "/api/sign_up":
+    post:
+      summary: Creates a user
+      tags:
+      - User
+      parameters: []
+      responses:
+        '200':
+          description: User created
+        '422':
+          description: Username cannot be empty
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+              - username
+  "/api/sign_in":
+    post:
+      summary: User login
+      tags:
+      - User
+      parameters: []
+      responses:
+        '200':
+          description: User Logged In
+        '422':
+          description: No user found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+              - username
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: https://ancient-hollows-68035.herokuapp.com
